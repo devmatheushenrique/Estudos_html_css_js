@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 04</title>
+    <style>
+        /* Estilizando a mensagem */
+        #mensagem {
+            font-size: 16px;
+            font-weight: normal;
+            transition: font-size 1s, font-weight 1s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular produto</h1>
+   
+
+    <button>Calcular produto</button>
+
+    <div id="mensagem">
+        <p id="res"></p>
+    </div>
+
+    <script>
+
+        let botao = document.querySelector('button');
+        let res = document.querySelector('p#res');
+        
+        botao.addEventListener ('click', () => click())
+
+        function click(){
+            let produto = window.prompt('Qual produto você está comprando?');
+
+            let valor = Number(window.prompt(`Qual o valor do ${produto} que você está comprando?`));
+
+            let valorpago = Number(window.prompt(`Qual o valor que você deu pra pagar o  ${produto}`));
+
+            let resultado = valor - valorpago
+            
+            res.innerHTML = `Você comprou o ${produto} que custou R$ ${valor}. Deu ${valorpago} em dinheiro e vai receber ${resultado}  de troco`;
+        }
+
+         // Função para animar a mensagem
+        function animarMensagem() {
+            let tamanhoFonte = 16;
+            let pesoFonte = 400;
+
+            // Aumenta a cada 1 segundo até o segundo 10
+            let intervalo = setInterval(function() {
+                tamanhoFonte += 2; // Aumenta em 2 pixels
+                pesoFonte += 100; // Aumenta o peso da fonte em 100
+                document.getElementById('mensagem').style.fontSize = tamanhoFonte + 'px';
+                document.getElementById('mensagem').style.fontWeight = pesoFonte;
+                if (tamanhoFonte >= 36) { // Para a animação quando o tamanho da fonte alcançar 36px
+                    clearInterval(intervalo);
+                }
+            }, 1000); // Intervalo de 1 segundo
+        }
+
+        // Chama a função para iniciar a animação quando a página carregar
+        window.onload = animarMensagem; 
+    </script>
+</body>
+</html>

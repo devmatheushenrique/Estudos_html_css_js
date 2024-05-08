@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 01</title>
+</head>
+
+<style>
+
+#botao1, #botao2, #botao3{
+    width: 200px;
+    height: 200px;
+}
+</style>
+
+<body>
+    
+<h1>Desafio das Mensagens</h1>
+
+<input type="button" value="Botão 1" id="botao1">
+<input type="button" value="Botão 2" id="botao2">
+<input type="button" value="Botão 3" id="botao3">
+
+<script>
+
+/* agora vamos utilizar o metodo de arrows functions para simplificar o código */
+
+const button1 = window.document.querySelector("#botao1");
+const button2 = window.document.querySelector("#botao2");
+const button3 = window.document.querySelector("#botao3");
+
+button1.addEventListener('click', () => clicar('primeiro'));
+button2.addEventListener('click', () => clicar('segundo'));
+button3.addEventListener('click', () => clicar('terceiro'));
+
+function clicar(ordem){
+    console.log(`usuário clicou no ${ordem} botão`)
+    window.alert(`Você clicou no ${ordem} botão!!!!`);
+}
+
+/* 
+Cada uma dessas linhas faz o seguinte:
+
+    Define um event listener para um botão específico que ouve pelo evento de "click".
+    Quando o evento de "click" ocorre, a arrow function (() => clicar('primeiro'), por exemplo) é executada.
+    Dentro da arrow function, a função clicar é chamada com um argumento literal (como 'primeiro').
+
+Passagem de Argumento
+
+A string 'primeiro' é passada como um argumento para a função clicar. Na função clicar, o parâmetro ordem é utilizado para receber esse argumento. Assim que a função é chamada, qualquer coisa que seja passada como argumento para clicar será atribuída à variável ordem dentro da função.
+Fluxo de Dados
+
+Aqui está uma visão mais direta do fluxo:
+
+    O usuário clica em button1.
+    O event listener ativa a arrow function: () => clicar('primeiro').
+    A arrow function chama clicar('primeiro').
+    A função clicar é executada, onde ordem recebe o valor 'primeiro'.
+    As mensagens são formadas usando o valor de ordem. */
+
+
+</script>
+</body>
+</html>

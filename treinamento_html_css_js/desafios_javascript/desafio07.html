@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 06</title>
+    <style>
+        /* Estilizando a mensagem */
+        #mensagem {
+            font-size: 16px;
+            font-weight: normal;
+            transition: font-size 1s, font-weight 1s;
+        }
+    </style>
+</head>
+<body>
+    <h1>Calcular dolár</h1>
+   
+
+    <button>Calcular dólar</button>
+
+    <div id="mensagem">
+        <p id="res"></p>
+    </div>
+
+    <p>Clique no botão acima para iniciar</p>
+
+    <script>
+
+    let dolar = Number(window.prompt('Antes de mais nada quanto está a cotação do dólar agora?'));
+
+
+        let botao = document.querySelector('button');
+        let res = document.querySelector('p#res');
+        
+        botao.addEventListener ('click', () => click())
+
+        function click(){
+            
+
+            let carteira = Number(window.prompt(`Quantos R$ você tem na carteira?`));
+
+            let resultado = carteira / dolar
+            
+            res.innerHTML = `você com o valor ${carteira} que você tem consegue comprar ${resultado.toFixed(3)} dólares`;
+        }
+
+         // Função para animar a mensagem
+        function animarMensagem() {
+            let tamanhoFonte = 16;
+            let pesoFonte = 400;
+
+            // Aumenta a cada 1 segundo até o segundo 10
+            let intervalo = setInterval(function() {
+                tamanhoFonte += 2; // Aumenta em 2 pixels
+                pesoFonte += 100; // Aumenta o peso da fonte em 100
+                document.getElementById('mensagem').style.fontSize = tamanhoFonte + 'px';
+                document.getElementById('mensagem').style.fontWeight = pesoFonte;
+                if (tamanhoFonte >= 36) { // Para a animação quando o tamanho da fonte alcançar 36px
+                    clearInterval(intervalo);
+                }
+            }, 1000); // Intervalo de 1 segundo
+        }
+
+        // Chama a função para iniciar a animação quando a página carregar
+        window.onload = animarMensagem; 
+    </script>
+</body>
+</html>

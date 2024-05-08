@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 02</title>
+
+    <style>
+        input{
+            width: 300px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Desafio 02</h1>
+
+    <input type="button" value="Inicie o desafio">
+
+    <script>
+        const botao = document.querySelector('input');
+
+        botao.addEventListener('click', () => clicar());
+
+        function clicar(){
+             let nome = window.prompt('Qual o seu nome?');
+
+             if (!nome){
+                window.alert("Você não inseriu um nome!!!")
+                return;
+             }
+
+             let idade = window.prompt(`Olá meu amigo ${nome}, qual a sua idade?`);
+             idade = parseInt(idade);
+
+             while (idade === '' || isNaN(idade) || idade === null) {
+                if (idade === '' || isNaN(idade)) {
+                    window.alert("Por favor insira uma idade válida!!");
+                } else if (idade === null){
+                    window.alert ("Você cancelou a entrada, insira uma idade!");
+                } 
+             idade = window.prompt(`Olá meu amigo ${nome}, qual a sua idade?`);
+             idade = parseInt(idade);
+            }
+
+             window.alert (`acabei de conhecer o ${nome} que tem ${idade} anos`);
+        }
+    </script>
+</body>
+</html>

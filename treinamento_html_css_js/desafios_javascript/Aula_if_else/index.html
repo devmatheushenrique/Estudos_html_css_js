@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qual seu país?</title>
+
+    <style>
+
+        h1{
+            text-align: center  ;
+        }
+
+        .botaotodos{
+            background-color: aquamarine;
+            width: 300px;
+            height: 300px;
+            display: inline-block;
+        }
+
+        p {
+            padding-top: 120px;
+            text-align: center;
+            font-weight: bolder;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistema dos botões</h1>
+
+    <div id="botao" class="botaotodos"><p>Comprando produto</p></div>
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var botao = document.querySelector('div#botao');
+            
+
+            botao.addEventListener('click', function() {
+                do{
+                    produto = window.prompt('Que produto você está comprando?');
+                    if(produto === null) return;
+                } while (!produto);
+                do{
+                preco = Number(window.prompt(`Quanto custa o ${produto} que você está comprando?`).replace(',','.'));
+            } while (!preco);
+                valor_pago = Number(window.prompt(`Qual foi o valor que você deu para pagar o ${produto}`).replace(',','.'));
+                resultado =  valor_pago - preco;
+                preco_formatado = preco.toLocaleString('pt-BR' , {style: 'currency', currency: 'BRL'});
+                valor_formatado = valor_pago.toLocaleString('pt-BR' , {style: 'currency', currency: 'BRL'});
+                resultado_formatado = resultado.toLocaleString('pt-BR' , {style: 'currency', currency: 'BRL'});
+                alert(`Você comprou um ${produto} que custou ${preco_formatado}. Deu ${valor_formatado} em dinheiro e vai receber ${resultado_formatado} de troco.`);
+            });
+
+        });
+    </script>
+</body>
+</html>

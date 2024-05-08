@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 03</title>
+</head>
+<style>input{
+    width: 300px;
+    height: 100px;
+}</style>
+
+<body>
+    
+    <h1>Antes e Depois</h1>
+
+    <input type="button" value="Antecessor e Sucessor">
+
+    <script>
+        let botao  = document.querySelector('input');
+
+        botao.addEventListener('click', () => click());
+
+        function click(){
+            let numero = Number(window.prompt('Digite um número!!!'));
+            let antecessor = numero - 1;
+            let sucessor = numero + 1;
+
+            window.alert(`Antes de ${numero}, temos o número ${antecessor}. Depois de ${numero}, temos o número ${sucessor}`);
+
+        }
+
+    </script>
+
+</body>
+</html>

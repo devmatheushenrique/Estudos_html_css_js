@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio 01</title>
+</head>
+
+<style>
+
+#botao1, #botao2, #botao3{
+    width: 200px;
+    height: 200px;
+}
+</style>
+
+<body>
+    
+<h1>Desafio das Mensagens</h1>
+
+<input type="button" value="Botão 1" id="botao1">
+<input type="button" value="Botão 2" id="botao2">
+<input type="button" value="Botão 3" id="botao3">
+
+<script>
+
+button1 = window.document.querySelector("input#botao1");
+button2 = window.document.querySelector("input#botao2");
+button3 = window.document.querySelector("input#botao3");
+
+button1.addEventListener('click', clicar1);
+button2.addEventListener('click', clicar2);
+button3.addEventListener('click', clicar3);
+
+function clicar1(){
+    console.log ('usuário clicou no primeiro botão')
+    window.alert('Você clicou no primeiro botão!!!!');
+}
+
+function clicar2(){
+    console.log ('usuário clicou no segundo botão')
+    window.alert('Você clicou no segundo botão!!!!');
+}
+
+function clicar3(){
+    console.log ('usuário clicou no terceiro botão')
+    window.alert('Você clicou no terceiro botão!!!!');
+}
+
+</script>
+</body>
+</html>
